@@ -22,7 +22,7 @@ function App() {
           </Route>
           <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<a to="/">Return to Home page</a>} />
+          <Route path="*" element={<h1>404 Page not Found</h1>} />
         </Routes>
       </BrowserRouter>
     </>
