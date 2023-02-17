@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/tankautomation/static/js/main.49ca1fbe.js",
+    "static/js/787.33fd910b.chunk.js": "/tankautomation/static/js/787.33fd910b.chunk.js",
+    "static/media/logo4.png": "/tankautomation/static/media/logo4.b76775af79d238936487.png",
+    "static/media/homedes1.jpg": "/tankautomation/static/media/homedes1.6b199474feddc92784c8.jpg",
+    "static/media/home1.jpg": "/tankautomation/static/media/home1.2424800d78eb370afb79.jpg",
+    "static/media/admin_logo.png": "/tankautomation/static/media/admin_logo.532ed5881202af113f15.png",
+    "index.html": "/tankautomation/index.html",
+    "main.49ca1fbe.js.map": "/tankautomation/static/js/main.49ca1fbe.js.map",
+    "787.33fd910b.chunk.js.map": "/tankautomation/static/js/787.33fd910b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.49ca1fbe.js"
+  ]
+}
