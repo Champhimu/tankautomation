@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import LoginReg from "./components/pages/auth/LoginReg";
 import ResetPassword from "./components/pages/auth/ResetPassword";
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail";
@@ -22,7 +22,7 @@ function App() {
           </Route>
           <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<h1>Error 404 Page not found !! SORRY</h1>} />
+          <Route path="*" element={<a to="/">Return to Home page</a>} />
         </Routes>
       </BrowserRouter>
     </>
