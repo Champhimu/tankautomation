@@ -19,11 +19,10 @@ function App() {
             <Route path="login" element={<LoginReg />} />
             <Route path="reset" element={<ResetPassword />} />
             <Route path="/logreg" element={<LogReg />} />
-            {/* <Route path="/reset-password" exact element={<ForgotPassword />}></Route> */}
           </Route>
-            <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
+          <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<h1>Error 404 Page not found !!</h1>} />
+          <Route path="*" element={<h1>Error 404 Page not found !! SORRY</h1>} />
         </Routes>
       </BrowserRouter>
     </>
