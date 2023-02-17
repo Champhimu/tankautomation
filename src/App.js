@@ -1,4 +1,4 @@
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoginReg from "./components/pages/auth/LoginReg";
 import ResetPassword from "./components/pages/auth/ResetPassword";
 import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail";

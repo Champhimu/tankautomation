@@ -1,6 +1,5 @@
 import { Box, Typography, styled, Grid } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material/";
 import CallRoundedIcon from '@mui/icons-material/CallRounded';
 
@@ -11,8 +10,6 @@ const SocialBox = styled(Box)({
 });
 
 const Footer = () => {
-
-  const navigate = useNavigate();
 
   return (
     <Box sx={{  backgroundColor: "#26201d", width: '100%', marginTop: "20px"}}>
