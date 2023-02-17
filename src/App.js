@@ -18,7 +18,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="login" element={<LoginReg />} />
             <Route path="reset" element={<ResetPassword />} />
-            <Route path="/logreg" element={<LogReg />} />
+            <Route path="logreg" element={<LogReg />} />
           </Route>
           <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
           <Route path="/dashboard" element={<Dashboard />} />
