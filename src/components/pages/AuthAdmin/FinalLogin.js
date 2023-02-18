@@ -4,7 +4,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
 const FinalRegister = ({handleChange}) => {
-    const paperStyle={padding :30,height:'80vh',width:'auto', margin:"0 auto"}
+    const paperStyle={padding :30,height:'100%',width:'100%', margin:"0 auto"}
     const btnstyle={margin:'8px 0'}
 
   return (
@@ -13,7 +13,7 @@ const FinalRegister = ({handleChange}) => {
                 <Grid align='center'>
                     <h2>Sign In</h2>
                 </Grid>
-                <Box component='form' noValidate  id='login-form'>
+                <Box component='form' noValidate sx={{ mt: 1 }}  id='login-form'>
                 <TextField margin='normal' label='Username' name='username' placeholder='Enter username' fullWidth required/>
                 <TextField margin='normal' label='Password' name='password' placeholder='Enter password' type='password' fullWidth required/>
                 <FormControlLabel

@@ -17,6 +17,7 @@ const Navbar = () => {
           {isMatch ? 
           (
             <>
+            <img src={logo} alt='logo' width={"80"} height={"70"} />
             <Typography sx={{ paddingLeft: "10%", paddingTop: "5px" }} variant='h5' component="div">
                 Tank Automation
               </Typography>

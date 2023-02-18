@@ -4,7 +4,7 @@ import { Radio, RadioGroup, FormControl, FormLabel, Checkbox } from '@mui/materi
 import FormControlLabel from "@mui/material/FormControlLabel";
 
 const finalLogin = () => {
-    const paperStyle = { padding: 20, height: '90vh',width: 'auto', margin: "0 auto" }
+    const paperStyle = { padding: 20, height: '100%',width: '100%', margin: "0 auto" }
     const headerStyle = { margin: 0 }
     const marginTop = { marginTop: 5 }
     return (
