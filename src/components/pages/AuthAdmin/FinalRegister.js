@@ -27,7 +27,7 @@ const finalLogin = () => {
                     <TextField margin='normal' fullWidth label='Phone Number' placeholder="Enter your phone number" />
                     <TextField margin='normal' fullWidth label='Password' placeholder="Enter your password"/>
                     <TextField margin='normal' fullWidth label='Confirm Password' placeholder="Confirm your password"/>
-                    <FormControlLabel
+                    <FormControlLabel sx={{mb: 2}}
                         control={<Checkbox name="checked" />}
                         label="I accept the terms and conditions."
                     />

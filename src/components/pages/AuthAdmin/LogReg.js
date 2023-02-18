@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Paper, Tab, Tabs, Typography, Box,  } from '@mui/material';
+import { Paper, Tab, Tabs, Typography, Box,createTheme, Card, ThemeProvider  } from '@mui/material';
 import Login from './FinalLogin';
 import Signup from './FinalRegister'
 
@@ -10,7 +10,21 @@ const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const paperStyle={width:500,margin:"20px auto"}
+  const paperStyle= {padding: 10, height: '100%', width: '100%', display: 'flex', justifyContent: 'center', alignItem: 'center'}
+
+  const theme = createTheme({
+    breakpoints: {
+      values: {
+        xxs: 0, // small phone
+        xs: 300, // phone
+        sm: 600, // tablets
+        md: 900, // small laptop
+        lg: 1200, // desktop
+        xl: 1536 // large screens
+      }
+    }
+  });
+
   function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -32,8 +46,17 @@ const handleChange = (event, newValue) => {
   }
   
     return (
-        <Paper elevation={20} style={paperStyle}>
-        <Tabs
+      <ThemeProvider theme={theme}>
+      <Paper style={paperStyle}>
+        {/* {isMatch ?} */}
+      <Card sx={{
+        width: {
+          sm: "100%",
+          md: "30%",
+        }
+      }}>
+          {/* <Box sx={{ mx: 2, height: '100%' }}> */}
+          <Tabs
           value={value}
           indicatorColor="primary"
           textColor="primary"
@@ -50,8 +73,10 @@ const handleChange = (event, newValue) => {
       <TabPanel value={value} index={1}>
       <Signup/>
       </TabPanel>
+          {/* </Box> */}
+      </Card>
       </Paper>
-      
+      </ThemeProvider>
     )
 }
 

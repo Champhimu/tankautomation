@@ -87,63 +87,62 @@ const Home = () => {
           <hr />
           <h4>Admin</h4>
 
-          <Typography variant="h6">1. Flow and Water Level</Typography>
+          <Typography variant="h6" m={1}>1. Flow and Water Level</Typography>
           <Typography variant="h7">
-            <Typography paddingLeft="20px">
+            <Typography ml={3}>
               {"1.1 Auto stop/start motor after reaching specific water level in upper tank (lower to upper tank)"}
             </Typography>
-            <Typography paddingLeft="20px">
+            <Typography ml={3}>
               {"1.1 Auto on/off based on water amount flowed at home (upper tank to home) "}
             </Typography>
           </Typography>
 
-          <Typography variant="h6">2. Schedule Time</Typography>
+          <Typography variant="h6" m={1}>2. Schedule Time</Typography>
           <Typography variant="h7">
-            <Typography paddingLeft="20px">
+            <Typography ml={3}>
               {"2.1 Schedule upper to home tank water supply so it will automatically supply water on that time."}
             </Typography>
-            <Typography paddingLeft="20px">
+            <Typography ml={3}>
               {"2.2 Schedule cleaning time on which it will automatically start cleaning at a particular date and time."}
             </Typography>
-            <Typography paddingLeft="20px">
+            <Typography ml={3}>
               {"2.3 Logs the clean details after cleaning the upper tank."}
             </Typography>
           </Typography>
 
-          <Typography variant="h6">
-            3. Manual signals
+          <Typography variant="h6" m={1}> 3. Manual signals </Typography>
             <Typography variant="h7">
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"3.1 You can manually on/off the motor through software."}
                 </Typography>
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"3.2 Logs the clean details after cleaning the upper tank."}
                 </Typography>
             </Typography>
-          </Typography>
+          
 
-          <Typography variant="h6">4. Users controls</Typography>
+          <Typography variant="h6" m={1}>4. Users controls</Typography>
           <Typography variant="h7">
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"4.1 Add a new user to the system and add his details to the system."}
                 </Typography>
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"4.2 On/off supply list of users to enable or disable his water supply."}
                 </Typography>
           </Typography>
           
-          <Typography variant="h6">5. Alerts and Notifications</Typography>
+          <Typography variant="h6" m={1}>5. Alerts and Notifications</Typography>
           <Typography variant="h7">
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"5.1 Send alerts to users."}
                 </Typography>
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"5.2 Get message from user."}
                 </Typography>
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"5.3 Get alert for incoming water in lower tank"}
                 </Typography>
-                <Typography paddingLeft="20px">
+                <Typography ml={3}>
                   {"5.4 Get tank cleaning and supply of water status and alerts"}
                 </Typography>
             </Typography>
