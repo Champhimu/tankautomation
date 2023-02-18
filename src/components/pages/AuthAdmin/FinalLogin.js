@@ -4,7 +4,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
 const FinalRegister = ({handleChange}) => {
-    const paperStyle={padding :30,height:'80vh',width:500, margin:"0 auto"}
+    const paperStyle={padding :30,height:'80vh',width:'auto', margin:"0 auto"}
     const btnstyle={margin:'8px 0'}
 
   return (
