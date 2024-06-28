@@ -1,32 +1,88 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import LoginReg from "./components/pages/auth/LoginReg";
-import ResetPassword from "./components/pages/auth/ResetPassword";
-import SendPasswordResetEmail from "./components/pages/auth/SendPasswordResetEmail";
-import Contact from "./components/pages/Contact";
-import Dashboard from "./components/pages/Dashboard";
-import Home from "./components/pages/Home";
-import Layout from "./components/pages/Layout";
-import LogReg from "./components/pages/AuthAdmin/LogReg";
+import React, { createContext, useEffect } from 'react'
+import './App.css'
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import About from './components/About';
+import Login from './components/Login';
+import Register from './components/Register';
+import ContactPage from './components/ContactPage';
+import {Routes, Route} from "react-router-dom";
+import ErrorPage from './components/ErrorPage';
+import BackPage from './components/BackPage';
+import AlertMsg, { showModalAlert } from './components/AlertMsg';
+import VerificationPage from './components/VerificationPage';
+import ForgotPass from './components/ForgotPass';
+import MyDashboard from './DashComponent/MyDashboard';
+import Spinner from './components/Spinner';
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import Access from './components/AccessPage';
+import InternalServerError from './components/InternalServerError';
+import { fetchApi } from './utility/apiHelper';
 
+export const loggedInContext = createContext("");
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(()=>{
+    if(localStorage.getItem('loggedin') && Cookies.get('jwtoken')){
+      setLoggedIn(true);
+      fetchApi("/testConnection")
+      .then((data)=>{
+        if(!data){
+          if(!navigator.onLine){
+             showModalAlert("Check your Internet connection");
+          }else{
+            showModalAlert("Problem occoured connecting to server")
+          }
+        }
+      })
+    }
+  },[])
+
+  const UseNav=({children})=>{
+    return(
+      <>
+        <Navbar/>
+        {children}
+      </>
+    )
+  }
+  
   return (
+    
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="login" element={<LoginReg />} />
-            <Route path="reset" element={<ResetPassword />} />
-            <Route path="logreg" element={<LogReg />} />
-          </Route>
-          <Route path="sendpasswordresetemail" element={<SendPasswordResetEmail />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="*" element={<h1>404 Page not Found</h1>} />
-        </Routes>
-      </BrowserRouter>
+    
+    <loggedInContext.Provider value= {{loggedIn, setLoggedIn}}>
+    <AlertMsg/>
+    <Spinner/>
+    {loggedIn ? 
+    
+    <MyDashboard /> 
+    
+    :
+
+    <>
+    {/* <Navbar/> */}
+    <Routes>
+      <Route exact path="/" element={<UseNav><Home /></UseNav>} />
+      <Route path="/about" element={<UseNav><About/></UseNav>} />
+      <Route path="/contact" element={<UseNav><ContactPage /></UseNav>} />
+      <Route path="/login" element={<UseNav><BackPage Element= {Login}/></UseNav>} />
+      <Route path="/register" element={<UseNav><BackPage Element= {Register}/></UseNav>} />
+      <Route path="/forgotPassword" element={<UseNav><BackPage Element= {ForgotPass} /> </UseNav> } />
+      <Route path="/verify" element={<UseNav><BackPage Element= {VerificationPage} /> </UseNav> } />
+      <Route path="/*" element={<ErrorPage/>} />
+      <Route path="/accessdenied" element={<Access />} />
+      <Route path='/servererror' element={<InternalServerError />} />
+    </Routes>
     </>
-  );
+    }
+    </loggedInContext.Provider>
+  </>
+    
+  )
 }
 
-export default App;
+
+export default App
